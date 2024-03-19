@@ -52,6 +52,9 @@ console.log(tavoloVipNew)
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 console.log('targhette studenti')
 const ulDomElement = document.querySelector('.nomi-studenti')
+const ulDomElement2 = document.querySelector('.over-70')
+const ulDomElement3 = document.querySelector('.over-70-120')
+
 const studenti = [
     {
         name: 'Marco della Rovere',
@@ -95,6 +98,16 @@ ulDomElement.innerHTML = listaNomiStudenti.map(function (elem) {
     return  `<li>${elem.name}</li>`;
 }).join('')
 
+const over70 = studenti.filter(function (elem) { return elem.grades > 70 })
+console.log(over70)
+ulDomElement2.innerHTML = over70.map(function(over70){
+    return `<li>${over70.name}</li>`
+}).join('')
+const over70GradesAnd120OfId = over70.filter(function (elem) { return elem.id > 120})
+ulDomElement3.innerHTML = over70GradesAnd120OfId.map(function(over70){
+    return `<li>${over70.name}</li>`
+}).join('')
+console.log(over70GradesAnd120OfId)
 
 // let nomiStudenti = []
 // let currentStudent = 0
